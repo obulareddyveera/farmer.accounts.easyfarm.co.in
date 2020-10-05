@@ -1,11 +1,12 @@
 {
   "/_app": "pages/_app.js",
-  "/about": "pages/about.html",
+  "/_document": "pages/_document.js",
   "/api/hello": "pages/api/hello.js",
-  "/auth_callback": "pages/auth_callback.html",
-  "/dashboard": "pages/dashboard.html",
+  "/app": "pages/app.html",
+  "/auth_callback/[token]": "pages/auth_callback/[token].html",
+  "/client/components/spinner": "pages/client/components/spinner.html",
+  "/client/container/dashboard": "pages/client/container/dashboard.html",
   "/": "pages/index.html",
   "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
   "/404": "pages/404.html"
 }

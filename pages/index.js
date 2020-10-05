@@ -1,9 +1,9 @@
 import React from "react";
-import Head from "next/head";
 import GoogleButton from "react-google-button";
-import styles from "../styles/Home.module.css";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
   const fetchOAuth2LoginLink = React.useCallback(() => {
     console.log("--== fetchOAuth2LoginLink ==--");
     try {
@@ -11,7 +11,7 @@ export default function Home() {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
-          window.location.href = data.loginLink;
+          router.push(data.loginLink);
         });
     } catch (err) {
       console.log(err);
@@ -19,9 +19,38 @@ export default function Home() {
   });
 
   return (
-    <div className={styles.container}>
-      <div>I am home page</div>
-      <GoogleButton onClick={() => fetchOAuth2LoginLink()} />
+    <div className="container-fluid">
+      <div className="row">
+        <div
+          className="offset-4 col-4 d-flex flex-column align-items-center justify-content-center"
+          style={{ height: "100vh" }}
+        >
+          <div className="card">
+            <div className="card-body p-2">
+              <h4 className="d-flex justify-content-around">Farmer Accounts</h4>
+              <h6 className="d-flex justify-content-around">
+                Accounting for the way you run your farm
+              </h6>
+              <p className="d-flex justify-content-around mb-3">
+                <a href="www.easyfarm.co.in" className="small">
+                  www.easyfarm.co.in
+                </a>
+              </p>
+              <p className="small">
+                Farming is unique. There are few other types of business that
+                rely on living produce, whether it's crops or livestock. That
+                makes farm accounting more complex than other businesses when it
+                comes to assets, liabilities, costs and revenue.
+              </p>
+            </div>
+            <div className="card-footer">
+              <div className="d-flex justify-content-around">
+                <GoogleButton onClick={() => fetchOAuth2LoginLink()} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

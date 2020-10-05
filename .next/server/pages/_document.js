@@ -88,10 +88,18 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ 1:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("5w0S");
+
+
+/***/ }),
 
 /***/ "2+G7":
 /***/ (function(module, exports) {
@@ -100,10 +108,55 @@ module.exports = require("styled-jsx/server");
 
 /***/ }),
 
-/***/ 7:
+/***/ "5w0S":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_document__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("8cZr");
+/* harmony import */ var next_document__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_document__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var jquery_dist_jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("WG9B");
+/* harmony import */ var jquery_dist_jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery_dist_jquery__WEBPACK_IMPORTED_MODULE_2__);
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
+  static async getInitialProps(ctx) {
+    const initialProps = await next_document__WEBPACK_IMPORTED_MODULE_1___default.a.getInitialProps(ctx);
+    return _objectSpread({}, initialProps);
+  }
+
+  render() {
+    return __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Html"], null, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Head"], null, __jsx("script", {
+      src: "https://code.jquery.com/jquery-3.5.1.js",
+      integrity: "sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=",
+      crossOrigin: "anonymous"
+    }), __jsx("script", {
+      src: "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    })), __jsx("body", null, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], null), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], null)));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (MyDocument);
+
+/***/ }),
+
+/***/ "8cZr":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("VDXt");
+module.exports = __webpack_require__("VDXt")
 
 
 /***/ }),
@@ -747,6 +800,13 @@ NextScript.safariNomoduleFix = '!function(){var e=document,t=e.createElement("sc
 function getAmpPath(ampPath, asPath) {
   return ampPath || `${asPath}${asPath.includes('?') ? '&' : '?'}amp=1`;
 }
+
+/***/ }),
+
+/***/ "WG9B":
+/***/ (function(module, exports) {
+
+module.exports = require("jquery/dist/jquery");
 
 /***/ }),
 

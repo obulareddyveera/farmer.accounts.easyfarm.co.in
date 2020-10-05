@@ -1,0 +1,1 @@
+{"ast":null,"code":"import React from 'react';\nexport const breakPointTypes = {\n  ON_BROWSER_RESIZE_DONE: \"ON_BROWSER_RESIZE_DONE\"\n};","map":null,"metadata":{},"sourceType":"module"}
