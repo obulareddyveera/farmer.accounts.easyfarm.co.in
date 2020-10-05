@@ -1,1 +1,0 @@
-{"ast":null,"code":"var __jsx = React.createElement;\nimport React from \"react\";\n\nfunction OAuthCallback(_ref) {\n  var Component = _ref.Component,\n      pageProps = _ref.pageProps;\n  return __jsx(\"div\", null, __jsx(\"div\", null, \"I am OAuthComponent ....Loading\"));\n}\n\nexport default OAuthCallback;","map":null,"metadata":{},"sourceType":"module"}
