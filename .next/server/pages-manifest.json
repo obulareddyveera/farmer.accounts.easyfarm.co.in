@@ -3,7 +3,7 @@
   "/_document": "pages/_document.js",
   "/api/hello": "pages/api/hello.js",
   "/app": "pages/app.html",
-  "/auth_callback/[token]": "pages/auth_callback/[token].html",
+  "/auth_callback": "pages/auth_callback.html",
   "/client/components/spinner": "pages/client/components/spinner.html",
   "/client/container/dashboard": "pages/client/container/dashboard.html",
   "/": "pages/index.html",

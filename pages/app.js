@@ -1,5 +1,5 @@
 import React from "react";
-import { StaticRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Dashboard from "./client/container/dashboard";
 import useBreakpoints from "./../hooks/useBreakPoints";
 
@@ -39,11 +39,13 @@ function FarmerAccounts(props) {
             </div>
           </div>
           <div className="mt-4 p-4">
-            <StaticRouter>
-              <Switch>
-                <Route path="/app" exact component={Dashboard} />
-              </Switch>
-            </StaticRouter>
+            {process && process.browser && (
+              <BrowserRouter>
+                <Switch>
+                  <Route path="/app" exact component={Dashboard} />
+                </Switch>
+              </BrowserRouter>
+            )}
           </div>
         </div>
       </main>
