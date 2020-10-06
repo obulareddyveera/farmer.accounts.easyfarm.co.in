@@ -7,7 +7,7 @@ export default function Home() {
   const fetchOAuth2LoginLink = React.useCallback(() => {
     console.log("--== fetchOAuth2LoginLink ==--");
     try {
-      fetch("http://api.farmer.accounts.easyfarm.co.in/")
+      fetch(`${window.location.protocol}//api.farmer.accounts.easyfarm.co.in/`)
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
