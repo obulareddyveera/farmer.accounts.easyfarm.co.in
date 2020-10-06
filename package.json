@@ -9,6 +9,10 @@
     "export": "next export"
   },
   "dependencies": {
+    "@styled-icons/feather": "^10.18.0",
+    "@styled-icons/material": "^10.18.0",
+    "@styled-icons/octicons": "^10.20.0",
+    "@styled-icons/simple-icons": "^10.22.0",
     "bootstrap": "^4.5.2",
     "jquery": "^3.5.1",
     "lodash.throttle": "^4.1.1",
@@ -22,6 +26,7 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.2.0"
   }
 }

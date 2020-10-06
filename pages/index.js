@@ -1,6 +1,13 @@
 import React from "react";
 import GoogleButton from "react-google-button";
 import { useRouter } from "next/router";
+import styled from "styled-components";
+
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
 
 export default function Home() {
   const router = useRouter();
@@ -27,7 +34,7 @@ export default function Home() {
         >
           <div className="card">
             <div className="card-body p-2">
-              <h4 className="d-flex justify-content-around">Farmer Accounts</h4>
+              <Title className="d-flex justify-content-around">Farmer Accounts</Title>
               <h6 className="d-flex justify-content-around">
                 Accounting for the way you run your farm
               </h6>
