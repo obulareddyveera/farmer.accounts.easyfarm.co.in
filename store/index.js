@@ -4,7 +4,6 @@
 // const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 // export default store;
 
-import React from 'react';
 import { createStore, applyMiddleware } from "redux";
 import reduxThunk from "redux-thunk";
 import { createWrapper } from "next-redux-wrapper";

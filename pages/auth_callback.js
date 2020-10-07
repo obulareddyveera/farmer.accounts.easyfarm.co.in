@@ -3,10 +3,8 @@ import { useRouter } from "next/router";
 import Spinner from "./client/components/spinner";
 
 function OAuthCallback() {
-  console.log("--=== I am token controller ===--");
   const router = useRouter();
   React.useEffect(() => {
-    debugger;
     if (process.browser) {
       const search = window.location.search;
       const params = new URLSearchParams(search);

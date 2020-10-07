@@ -1,4 +1,4 @@
-import React from 'react';
 import { setBreakPoints } from "./_breakPoints";
+import { getActiveSessionUser } from "./_users";
 
-export { setBreakPoints };
+export { setBreakPoints, getActiveSessionUser };

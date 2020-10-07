@@ -3,6 +3,8 @@ import GoogleButton from "react-google-button";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 
+import { api, apiService } from "./../store/api_service";
+
 const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
@@ -12,14 +14,10 @@ const Title = styled.h1`
 export default function Home() {
   const router = useRouter();
   const fetchOAuth2LoginLink = React.useCallback(() => {
-    console.log("--== fetchOAuth2LoginLink ==--");
     try {
-      fetch(`${window.location.protocol}//api.farmer.accounts.easyfarm.co.in/`)
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
-          router.push(data.loginLink);
-        });
+      apiService.getGoogleLoginLink().then((data) => {
+        router.push(data.loginLink);
+      });
     } catch (err) {
       console.log(err);
     }
@@ -34,7 +32,9 @@ export default function Home() {
         >
           <div className="card">
             <div className="card-body p-2">
-              <Title className="d-flex justify-content-around">Farmer Accounts</Title>
+              <Title className="d-flex justify-content-around">
+                Farmer Accounts
+              </Title>
               <h6 className="d-flex justify-content-around">
                 Accounting for the way you run your farm
               </h6>
