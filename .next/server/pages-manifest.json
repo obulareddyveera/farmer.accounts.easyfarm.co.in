@@ -1,7 +1,15 @@
 {
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
+  "/api/hello": "pages/api/hello.js",
+  "/app": "pages/app.html",
+  "/auth_callback": "pages/auth_callback.html",
+  "/client/components/hnav": "pages/client/components/hnav.html",
+  "/client/components/sidenav": "pages/client/components/sidenav.html",
+  "/client/components/spinner": "pages/client/components/spinner.html",
+  "/client/container/dashboard": "pages/client/container/dashboard.html",
+  "/client/container/profiler": "pages/client/container/profiler.html",
+  "/": "pages/index.html",
   "/_error": "pages/_error.js",
-  "/app": "pages/app.js",
-  "/auth_callback": "pages/auth_callback.js"
+  "/404": "pages/404.html"
 }
