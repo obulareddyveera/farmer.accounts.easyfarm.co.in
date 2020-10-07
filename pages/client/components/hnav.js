@@ -24,7 +24,7 @@ const ProfilePic = styled.img`
   cursor: pointer;
 `;
 
-export default function HNav({pic}) {
+export default function HNav({ pic }) {
   return (
     <header>
       <div className="fixed-top">
@@ -65,10 +65,13 @@ export default function HNav({pic}) {
                   <a href="#/auth/profile" className="dropdown-item">
                     Profile
                   </a>
-                  <div class="dropdown-divider"></div>
-                  <button className="dropdown-item" type="button">
+                  <div className="dropdown-divider"></div>
+                  <a
+                    href="https://mail.google.com/mail/u/0/?logout&hl=en"
+                    className="dropdown-item"
+                  >
                     Logout
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
