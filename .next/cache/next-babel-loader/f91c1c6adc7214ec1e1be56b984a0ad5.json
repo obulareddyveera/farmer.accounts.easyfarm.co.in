@@ -1,0 +1,1 @@
+{"ast":null,"code":"import enSidemenu from \"./_sidemenu.json\";\nexport default {\n  sidemenu: enSidemenu\n};","map":null,"metadata":{},"sourceType":"module"}

@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { I18nextProvider } from "react-i18next";
 import i18next from "i18next";
 
-import enSidemenu from "./../store/locales/en/sidemenu.json";
-import tuSidemenu from "./../store/locales/th/sidemenu.json";
+import enTranslator from "./../store/locales/en";
+import thTranslator from "./../store/locales/th";
 import FarmerAccounts from "./client/route";
 
 i18next.init({
@@ -11,14 +11,10 @@ i18next.init({
   lng: "th",
   resources: {
     en: {
-      translation: {
-        sidemenu: enSidemenu,
-      },
+      translation: enTranslator,
     },
     th: {
-      translation: {
-        sidemenu: tuSidemenu,
-      },
+      translation: thTranslator,
     },
   },
 });
