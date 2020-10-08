@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { combineReducers } from \"redux\";\nimport BreakPoints from \"./_breakPoints\";\nimport Users from \"./_users\";\nimport MetaData from \"./_metadata\";\nexport default combineReducers({\n  BreakPoints,\n  Users,\n  MetaData\n});","map":null,"metadata":{},"sourceType":"module"}

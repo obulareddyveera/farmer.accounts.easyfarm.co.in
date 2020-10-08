@@ -12,7 +12,6 @@ import { getActiveSessionUser } from "./../store/actions";
 const ContentSpace = styled.div`
   position: relative !important;
   width: 100%;
-  height: 100vh;
   margin-top: 2rem !important;
   padding: 2rem;
   @media (max-width: 720px) {

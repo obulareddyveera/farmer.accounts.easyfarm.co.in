@@ -9,6 +9,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@styled-icons/fa-solid": "^10.22.0",
     "@styled-icons/feather": "^10.18.0",
     "@styled-icons/material": "^10.18.0",
     "@styled-icons/octicons": "^10.20.0",

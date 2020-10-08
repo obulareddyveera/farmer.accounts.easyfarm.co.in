@@ -15,7 +15,11 @@ export default function profiler() {
       {session && (
         <React.Fragment>
           <div className="col-sm-12 col-md-6 d-flex justify-content-center">
-            <img src={session.picture || "./empty_profile.jpeg"} />
+            <img
+              src={session.picture || "./empty_profile.jpeg"}
+              class="img-thumbnail"
+              alt="profile"
+            />
           </div>
           <div className="col-sm-12 col-md-6">
             <table className="table">

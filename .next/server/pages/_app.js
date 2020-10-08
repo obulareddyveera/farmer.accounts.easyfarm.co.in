@@ -147,15 +147,15 @@ var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_)
 // EXTERNAL MODULE: ./node_modules/bootstrap/dist/css/bootstrap.css
 var bootstrap = __webpack_require__("+eM2");
 
-// EXTERNAL MODULE: external "next-redux-wrapper"
-var external_next_redux_wrapper_ = __webpack_require__("JMOJ");
-
 // EXTERNAL MODULE: external "redux"
 var external_redux_ = __webpack_require__("rKB8");
 
 // EXTERNAL MODULE: external "redux-thunk"
 var external_redux_thunk_ = __webpack_require__("ZSx1");
 var external_redux_thunk_default = /*#__PURE__*/__webpack_require__.n(external_redux_thunk_);
+
+// EXTERNAL MODULE: external "next-redux-wrapper"
+var external_next_redux_wrapper_ = __webpack_require__("JMOJ");
 
 // EXTERNAL MODULE: ./store/types/_breakPoints.js
 var _breakPoints = __webpack_require__("+z+R");
@@ -216,13 +216,46 @@ function Users(state, action) {
       return _users_objectSpread({}, initState);
   }
 }
+// EXTERNAL MODULE: ./store/types/_metadata.js
+var _metadata = __webpack_require__("Ktt7");
+
+// CONCATENATED MODULE: ./store/reducers/_metadata.js
+function _metadata_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _metadata_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { _metadata_ownKeys(Object(source), true).forEach(function (key) { _metadata_defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { _metadata_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _metadata_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+function _metadata_Users(state, action) {
+  const initState = {
+    isLoading: true,
+    dateLastModified: new Date().getTime()
+  };
+  if (!state) return initState;
+
+  switch (action.type) {
+    case _metadata["a" /* metaDataTypes */].GET_SIDEMENU_DETAILS_SUCCESS:
+      console.log('--==>> GET_SIDEMENU_DETAILS_SUCCESS  ', state, action);
+      return {
+        isLoading: false,
+        dateLastModified: new Date().getTime(),
+        sideMenuMetaInfo: action.payload
+      };
+
+    default:
+      return _metadata_objectSpread({}, state);
+  }
+}
 // CONCATENATED MODULE: ./store/reducers/index.js
+
 
 
 
 /* harmony default export */ var reducers = (Object(external_redux_["combineReducers"])({
   BreakPoints: reducers_breakPoints,
-  Users: Users
+  Users: Users,
+  MetaData: _metadata_Users
 }));
 // CONCATENATED MODULE: ./store/index.js
 // import reduxThunk from "redux-thunk";
@@ -242,13 +275,12 @@ const makeStore = initialState => {
 /* harmony default export */ var store = (Object(external_next_redux_wrapper_["createWrapper"])(makeStore, {
   debug: true
 }));
-// EXTERNAL MODULE: ./styles/globals.css
-var globals = __webpack_require__("zPlV");
+// EXTERNAL MODULE: ./styles/accordion.sidemenu.css
+var accordion_sidemenu = __webpack_require__("bOTN");
 
 // CONCATENATED MODULE: ./pages/_app.js
 
 var __jsx = external_react_default.a.createElement;
-
 
 
 
@@ -271,10 +303,28 @@ module.exports = require("next-redux-wrapper");
 
 /***/ }),
 
+/***/ "Ktt7":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return metaDataTypes; });
+const metaDataTypes = {
+  GET_SIDEMENU_DETAILS_SUCCESS: "GET_SIDEMENU_DETAILS_SUCCESS"
+};
+
+/***/ }),
+
 /***/ "ZSx1":
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
+
+/***/ }),
+
+/***/ "bOTN":
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 
@@ -289,13 +339,6 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("redux");
-
-/***/ }),
-
-/***/ "zPlV":
-/***/ (function(module, exports) {
-
-
 
 /***/ })
 

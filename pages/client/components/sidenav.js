@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
+import AppNavigationMenu from "./appNavigationMenu";
 import useBreakpoints from "./../../../hooks/useBreakPoints";
 
 const SideMenu = styled.div`
-  position: relative !important;
-  width: 30%;
   height: 100vh;
+  width: 30%;
+  background: #414956;
+  position: relative !important;
   @media (max-width: 720px) {
     position: absolute !important;
     z-index: 1;
@@ -17,11 +19,10 @@ export default function SideNav() {
   const point = useBreakpoints();
 
   return (
-    <SideMenu className={`${['xs','sm'].indexOf(point) > -1 ? "collapse": "expand"}`} id="sideMenuContent">
-      <div className="bg-dark p-4" style={{ height: "100vh" }}>
+      <SideMenu className={`${['xs','sm'].indexOf(point) > -1 ? "collapse": "expand"}`} id="sideMenuContent">
+      <div className="bg-dark pt-4">
         <div className="mt-4">
-          <h5 className="text-white h4">Collapsed content</h5>
-          <span className="text-muted">Toggleable via the navbar brand.</span>
+          <AppNavigationMenu />
         </div>
       </div>
     </SideMenu>

@@ -4,6 +4,7 @@
   "/api/hello": "pages/api/hello.js",
   "/app": "pages/app.html",
   "/auth_callback": "pages/auth_callback.html",
+  "/client/components/appNavigationMenu": "pages/client/components/appNavigationMenu.html",
   "/client/components/hnav": "pages/client/components/hnav.html",
   "/client/components/sidenav": "pages/client/components/sidenav.html",
   "/client/components/spinner": "pages/client/components/spinner.html",

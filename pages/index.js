@@ -23,12 +23,18 @@ export default function Home() {
     }
   });
 
+  React.useEffect(() => {
+    const jwtToken = localStorage.getItem("jwt");
+    if (jwtToken) {
+      router.push("/app");
+    }
+  });
+
   return (
     <div className="container-fluid">
       <div className="row">
         <div
           className="offset-4 col-4 d-flex flex-column align-items-center justify-content-center"
-          style={{ height: "100vh" }}
         >
           <div className="card">
             <div className="card-body p-2">
