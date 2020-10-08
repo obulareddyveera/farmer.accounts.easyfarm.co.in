@@ -44,3 +44,21 @@ export const onLiItemSelect = (item) => async (dispatch) => {
     console.log(err);
   }
 };
+
+export const onToggleSubmenu = (item) => async (dispatch) => {
+  try {
+    console.log("--==>> Action GET_SIDEMENU_DETAILS_SUCCESS  <<==--");
+    SideMenuMetaInfo.forEach((entity) => {
+      if (entity.id === item.id) {
+        entity.showSubmenu = !entity.showSubmenu;
+      }
+    });
+
+    dispatch({
+      type: metaDataTypes.GET_SIDEMENU_DETAILS_SUCCESS,
+      payload: SideMenuMetaInfo,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};

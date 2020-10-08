@@ -141,9 +141,16 @@
 .jquery-accordion-menu ul ul.submenu,
 .jquery-accordion-menu ul ul.submenu li ul.submenu {
 	width: 100%;
-	display: none;
 	position: static
 }
+
+.d-none {
+	display: none !important;
+}
+.d-block {
+	display: block !important;
+}
+
 
 .jquery-accordion-menu ul ul.submenu li {
 	clear: both;
@@ -166,6 +173,10 @@
 
 .jquery-accordion-menu ul ul.submenu li:hover>a {
 	border-left-color: #414956
+}
+
+.jquery-accordion-menu ul ul.submenu li.active>a {
+	border-left-color: #414956;
 }
 
 .jquery-accordion-menu ul ul.submenu>li>a {

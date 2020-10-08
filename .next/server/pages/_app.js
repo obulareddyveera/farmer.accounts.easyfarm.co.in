@@ -292,7 +292,7 @@ function MyApp({
   return __jsx(Component, pageProps);
 }
 
-/* harmony default export */ var _app = __webpack_exports__["default"] = (store.withRedux(MyApp));
+/* harmony default export */ var _app = __webpack_exports__["default"] = (store.withRedux(MyApp)); // export default MyApp;
 
 /***/ }),
 

@@ -10,6 +10,7 @@
   "/client/components/spinner": "pages/client/components/spinner.html",
   "/client/container/dashboard": "pages/client/container/dashboard.html",
   "/client/container/profiler": "pages/client/container/profiler.html",
+  "/client/route": "pages/client/route.html",
   "/": "pages/index.html",
   "/_error": "pages/_error.js",
   "/404": "pages/404.html"

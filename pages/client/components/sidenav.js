@@ -19,7 +19,10 @@ export default function SideNav() {
   const point = useBreakpoints();
 
   return (
-      <SideMenu className={`${['xs','sm'].indexOf(point) > -1 ? "collapse": "expand"}`} id="sideMenuContent">
+    <SideMenu
+      className={`${["xs", "sm"].indexOf(point) > -1 ? "collapse" : "expand"}`}
+      id="sideMenuContent"
+    >
       <div className="bg-dark pt-4">
         <div className="mt-4">
           <AppNavigationMenu />

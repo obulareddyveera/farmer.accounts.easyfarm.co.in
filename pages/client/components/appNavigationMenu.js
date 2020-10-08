@@ -1,19 +1,20 @@
 import React from "react";
-import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
+import {useTranslation} from "react-i18next";
 import {
-  Dashboard,
-  VideogameAsset,
-  CalendarToday,
-  ContactPage,
-  HelpCenter,
-} from "@styled-icons/material";
-import { CalendarAlt, CalendarCheck, Wallet } from "@styled-icons/fa-solid";
-import { ScikitLearn, Youtube, Blogger } from "@styled-icons/simple-icons";
-import { getSideMenuMetaData, onLiItemSelect } from "./../../../store/actions";
+  getSideMenuMetaData,
+  onLiItemSelect,
+  onToggleSubmenu,
+} from "./../../../store/actions";
+
+/**
+ * Source URL -- https://bootsnipp.com/snippets/prnvG
+ */
 
 export default function AppNavigationMenu() {
   const dispatch = useDispatch();
+  const { t, i18n } = useTranslation();
+  console.log("--==>> useTranslation ", t('sidemenu.helpCenter'));
   React.useEffect(() => {
     console.log("--==>> GET_SIDEMENU_DETAILS_SUCCESS  <<==--");
     dispatch(getSideMenuMetaData());
@@ -25,7 +26,7 @@ export default function AppNavigationMenu() {
     };
   });
   const { sideMenuMetaInfo } = metaData;
-  console.log("--== metaData: sideMenuMetaInfo ", metaData, sideMenuMetaInfo);
+  console.log("--== metaData: sideMenuMetaInfo ", sideMenuMetaInfo);
 
   const onLiClick = (event, item) => {
     event.preventDefault();
@@ -33,18 +34,11 @@ export default function AppNavigationMenu() {
     dispatch(onLiItemSelect(item));
   };
 
-  const onToggleSubmenu = (event, item, ulId) => {
+  const toggleSubmenu = (event, item, ulId) => {
     event.preventDefault();
     event.stopPropagation();
-    console.log("--== onToggleSubmenu ", event);
-    const currentState = $(`#${ulId}`).css("display");
-    if (currentState === "none") {
-      $(event.target).text("-");
-      $(`#${ulId}`).css("display", "block");
-    } else {
-      $(event.target).text("+");
-      $(`#${ulId}`).css("display", "none");
-    }
+    console.log("--== toggleSubmenu ", event);
+    dispatch(onToggleSubmenu(item));
   };
 
   const getLinkTag = (item) => {
@@ -65,27 +59,31 @@ export default function AppNavigationMenu() {
                     size: "20",
                     color: "#fff",
                   })}
-                <span className="ml-1">{item.displayName}</span>
+                <span className="ml-1">{t(item.translation)}</span>
                 {item.subMenu && (
-                  <span
+                  <button
+                    className="btn text-white submenu-indicator"
                     onClick={(event) =>
-                      onToggleSubmenu(event, item, randomUniqueId)
+                      toggleSubmenu(event, item, randomUniqueId)
                     }
-                    className="submenu-indicator"
                   >
-                    +
-                  </span>
+                    {item.showSubmenu ? "-" : "+"}
+                  </button>
                 )}
               </a>
             </React.Fragment>
           )}
           {item.type === "info" && (
             <a href="#" onClick={(event) => event.preventDefault()}>
-              {item.displayName}
+              {t(item.translation)}
             </a>
           )}
           {item.subMenu && (
-            <ul className="submenu" key={randomUniqueId} id={randomUniqueId}>
+            <ul
+              className={`submenu ${item.showSubmenu ? "d-block" : "d-none"}`}
+              key={randomUniqueId}
+              id={randomUniqueId}
+            >
               {item.subMenu.map((entity) => {
                 return getLinkTag(entity);
               })}

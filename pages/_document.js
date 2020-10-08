@@ -16,6 +16,7 @@ class MyDocument extends Document {
           </React.Fragment>
         </Head>
         <body>
+          <div id="root"></div>
           <Main />
           <NextScript />
           <script

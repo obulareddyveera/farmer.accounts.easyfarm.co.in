@@ -39,6 +39,10 @@ export default function profiler() {
                 <th>Email</th>
                 <td>{session.email}</td>
               </tr>
+              <tr>
+                <th>Language</th>
+                <td></td>
+              </tr>
             </table>
           </div>
         </React.Fragment>

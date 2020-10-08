@@ -1,56 +1,34 @@
-import React from "react";
-import { HashRouter, Switch, Route } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import styled from "styled-components";
+import React, { Component } from "react";
+import { I18nextProvider } from "react-i18next";
+import i18next from "i18next";
 
-import HNav from "./client/components/hnav";
-import SideNav from "./client/components/sidenav";
-import Dashboard from "./client/container/dashboard";
-import Profiler from "./client/container/profiler";
-import { getActiveSessionUser } from "./../store/actions";
+import enSidemenu from "./../store/locales/en/sidemenu.json";
+import tuSidemenu from "./../store/locales/th/sidemenu.json";
+import FarmerAccounts from "./client/route";
 
-const ContentSpace = styled.div`
-  position: relative !important;
-  width: 100%;
-  margin-top: 2rem !important;
-  padding: 2rem;
-  @media (max-width: 720px) {
-    padding: 0rem;
-  }
-`;
-function FarmerAccounts(props) {
-  const dispatch = useDispatch();
-  React.useEffect(() => {
-    dispatch(getActiveSessionUser());
-  }, []);
+i18next.init({
+  interpolation: { escapeValue: false },
+  lng: "th",
+  resources: {
+    en: {
+      translation: {
+        sidemenu: enSidemenu,
+      },
+    },
+    th: {
+      translation: {
+        sidemenu: tuSidemenu,
+      },
+    },
+  },
+});
 
-  const { session } = useSelector((state) => {
-    return {
-      session: (state.Users && state.Users.session) || {},
-    };
-  });
-  const { picture } = session;
-
+export default function App() {
   return (
     <React.Fragment>
-      <HNav pic={picture || "/empty_profile.jpeg"} />
-      <main className="mt-4" style={{ position: "relative" }}>
-        <div className="d-flex" style={{ position: "relative" }}>
-          <SideNav />
-          <ContentSpace>
-            {process && process.browser && (
-              <HashRouter>
-                <Switch>
-                  <Route path="/auth/profile" exact component={Profiler} />
-                  <Route path="/" exact component={Dashboard} />
-                </Switch>
-              </HashRouter>
-            )}
-          </ContentSpace>
-        </div>
-      </main>
+      <I18nextProvider i18n={i18next}>
+        <FarmerAccounts />
+      </I18nextProvider>
     </React.Fragment>
   );
 }
-
-export default FarmerAccounts;
