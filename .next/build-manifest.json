@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/Xumv6uGTJySLn04g1wKIv/_buildManifest.js",
-    "static/Xumv6uGTJySLn04g1wKIv/_ssgManifest.js"
+    "static/o6a0TvrPc7MYGIj1ZTNvi/_buildManifest.js",
+    "static/o6a0TvrPc7MYGIj1ZTNvi/_ssgManifest.js"
   ],
   "pages": {
     "/": [
@@ -16,7 +16,7 @@
       "static/chunks/a67ae1b21ecda5b0a764f4c6dec74cec5baa8837.d18b4cd5b9181f9df943.js",
       "static/chunks/0d5b62841e47bf03729c650b5fc092a497467791.63f27388847e6ad6b0dd.js",
       "static/chunks/814c921ca3767108f175618582692d8cbb164927.c61f957d12398863452c.js",
-      "static/chunks/pages/index-e607f3a02cea8023e6fa.js"
+      "static/chunks/pages/index-f625c10a80d2bf1cd84d.js"
     ],
     "/_app": [
       "static/chunks/main-9d6593d523018d2f01d2.js",
@@ -43,7 +43,7 @@
       "static/chunks/a67ae1b21ecda5b0a764f4c6dec74cec5baa8837.d18b4cd5b9181f9df943.js",
       "static/chunks/e5ebd76a50e634f0d3e1541379111323f6a37222.03d58d41227686df3c9e.js",
       "static/chunks/0d5b62841e47bf03729c650b5fc092a497467791.63f27388847e6ad6b0dd.js",
-      "static/chunks/0db571c384dce39e30d7d938f45c41292c8c516e.c972d6e6e15f5f7c85f2.js",
+      "static/chunks/0db571c384dce39e30d7d938f45c41292c8c516e.9502584f3e3f4f81f11f.js",
       "static/chunks/pages/app-4c50deaac866d7b7c247.js"
     ],
     "/auth_callback": [
@@ -61,7 +61,7 @@
       "static/chunks/a67ae1b21ecda5b0a764f4c6dec74cec5baa8837.d18b4cd5b9181f9df943.js",
       "static/chunks/e5ebd76a50e634f0d3e1541379111323f6a37222.03d58d41227686df3c9e.js",
       "static/chunks/0d5b62841e47bf03729c650b5fc092a497467791.63f27388847e6ad6b0dd.js",
-      "static/chunks/0db571c384dce39e30d7d938f45c41292c8c516e.c972d6e6e15f5f7c85f2.js",
+      "static/chunks/0db571c384dce39e30d7d938f45c41292c8c516e.9502584f3e3f4f81f11f.js",
       "static/chunks/pages/client/components/appNavigationMenu-8e02c7c03d9632a821d2.js"
     ],
     "/client/components/hnav": [
@@ -78,7 +78,7 @@
       "static/chunks/a67ae1b21ecda5b0a764f4c6dec74cec5baa8837.d18b4cd5b9181f9df943.js",
       "static/chunks/e5ebd76a50e634f0d3e1541379111323f6a37222.03d58d41227686df3c9e.js",
       "static/chunks/0d5b62841e47bf03729c650b5fc092a497467791.63f27388847e6ad6b0dd.js",
-      "static/chunks/0db571c384dce39e30d7d938f45c41292c8c516e.c972d6e6e15f5f7c85f2.js",
+      "static/chunks/0db571c384dce39e30d7d938f45c41292c8c516e.9502584f3e3f4f81f11f.js",
       "static/chunks/pages/client/components/sidenav-e7b09970ea0e61bccef8.js"
     ],
     "/client/components/spinner": [

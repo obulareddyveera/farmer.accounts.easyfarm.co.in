@@ -15,6 +15,7 @@ export const api = {
 
 export const apiService = {
   getGoogleLoginLink: async () => {
+    debugger;
     const url = `${api.getProtocol()}${api.googleLoginLink.url}`;
     const response = await fetch(url, {
       method: api.googleLoginLink.method,
