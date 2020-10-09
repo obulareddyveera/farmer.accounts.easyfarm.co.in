@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 import actions from "./../../../store/actions";
 
 /**
@@ -23,11 +23,13 @@ export default function AppNavigationMenu() {
   const { sideMenuMetaInfo } = metaData;
 
   const onLiClick = (event, item) => {
-    dispatch(metadataActions.onLiItemSelect(item));
-  };
-
-  const toggleSubmenu = (event, item, ulId) => {
-    dispatch(metadataActions.onToggleSubmenu(item));
+    if (item.subMenu) {
+      event.preventDefault();
+      event.stopPropagation();
+      dispatch(metadataActions.onToggleSubmenu(item));
+    } else {
+      dispatch(metadataActions.onLiItemSelect(item));
+    }
   };
 
   const getLinkTag = (item) => {
@@ -44,24 +46,19 @@ export default function AppNavigationMenu() {
             <React.Fragment>
               <a href={`#${item.url}`} className="d-flex justify-content-start">
                 <div>
-                {item.iconComponent &&
-                  React.createElement(item.iconComponent, {
-                    size: "20",
-                    color: "#fff",
-                  })}
+                  {item.iconComponent &&
+                    React.createElement(item.iconComponent, {
+                      size: "20",
+                      color: "#fff",
+                    })}
                 </div>
                 <div className="ml-3">{t(item.translation)}</div>
                 <div>
-                {item.subMenu && (
-                  <button
-                    className="btn text-white submenu-indicator"
-                    onClick={(event) =>
-                      toggleSubmenu(event, item, randomUniqueId)
-                    }
-                  >
-                    {item.showSubmenu ? "-" : "+"}
-                  </button>
-                )}
+                  {item.subMenu && (
+                    <button className="btn text-white submenu-indicator">
+                      {item.showSubmenu ? "-" : "+"}
+                    </button>
+                  )}
                 </div>
               </a>
             </React.Fragment>
