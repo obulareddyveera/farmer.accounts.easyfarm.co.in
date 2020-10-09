@@ -3,7 +3,6 @@ import SideMenuMetaInfo from "../metadata/sideMenuMetaInfo";
 
 export const getSideMenuMetaData = () => async (dispatch) => {
   try {
-    console.log("--==>> Action GET_SIDEMENU_DETAILS_SUCCESS  <<==--");
     dispatch({
       type: metaDataTypes.GET_SIDEMENU_DETAILS_SUCCESS,
       payload: SideMenuMetaInfo,
@@ -15,7 +14,6 @@ export const getSideMenuMetaData = () => async (dispatch) => {
 
 export const onLiItemSelect = (item) => async (dispatch) => {
   try {
-    console.log("--==>> Action GET_SIDEMENU_DETAILS_SUCCESS  <<==--");
     SideMenuMetaInfo.forEach((entity) => {
       if (entity.subMenu && entity.subMenu.length > 0) {
         entity.subMenu.forEach((subEntity) => {
@@ -47,7 +45,6 @@ export const onLiItemSelect = (item) => async (dispatch) => {
 
 export const onToggleSubmenu = (item) => async (dispatch) => {
   try {
-    console.log("--==>> Action GET_SIDEMENU_DETAILS_SUCCESS  <<==--");
     SideMenuMetaInfo.forEach((entity) => {
       if (entity.id === item.id) {
         entity.showSubmenu = !entity.showSubmenu;

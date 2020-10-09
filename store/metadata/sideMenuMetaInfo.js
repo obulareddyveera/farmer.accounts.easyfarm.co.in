@@ -13,6 +13,7 @@ import {
   Calculator,
 } from "@styled-icons/fa-solid";
 import { ScikitLearn, Youtube, Blogger } from "@styled-icons/simple-icons";
+import { Admin, Plant } from "@styled-icons/remix-fill";
 
 export default [
   {
@@ -22,6 +23,15 @@ export default [
     iconComponent: Dashboard,
     className: "active",
     type: "link",
+    url: "/",
+  },
+  {
+    id: "adminLink",
+    displayName: "Select Crop",
+    translation: "sidemenu.selectCrop",
+    iconComponent: Plant,
+    type: "link",
+    url: "/auth/selectCrop/",
   },
   {
     id: "walletLink",
@@ -110,6 +120,13 @@ export default [
     displayName: "Farming Calculator",
     translation: "sidemenu.farmingCalculator",
     iconComponent: Calculator,
+    type: "link",
+  },
+  {
+    id: "adminLink",
+    displayName: "Admin",
+    translation: "sidemenu.admin",
+    iconComponent: Admin,
     type: "link",
   },
 ];

@@ -111,20 +111,6 @@ const usersTypes = {
 
 /***/ }),
 
-/***/ "+z+R":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return breakPointTypes; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-const breakPointTypes = {
-  ON_BROWSER_RESIZE_DONE: "ON_BROWSER_RESIZE_DONE"
-};
-
-/***/ }),
-
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -157,9 +143,11 @@ var external_redux_thunk_default = /*#__PURE__*/__webpack_require__.n(external_r
 // EXTERNAL MODULE: external "next-redux-wrapper"
 var external_next_redux_wrapper_ = __webpack_require__("JMOJ");
 
-// EXTERNAL MODULE: ./store/types/_breakPoints.js
-var _breakPoints = __webpack_require__("+z+R");
+// CONCATENATED MODULE: ./store/types/_breakPoints.js
 
+const breakPointTypes = {
+  ON_BROWSER_RESIZE_DONE: "ON_BROWSER_RESIZE_DONE"
+};
 // CONCATENATED MODULE: ./store/reducers/_breakPoints.js
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -168,7 +156,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
-/* harmony default export */ var reducers_breakPoints = ((state, action) => {
+/* harmony default export */ var _breakPoints = ((state, action) => {
   const initState = {
     isLoading: true,
     dateLastModified: new Date().getTime()
@@ -176,7 +164,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   if (!state) return initState;
 
   switch (action.type) {
-    case _breakPoints["a" /* breakPointTypes */].ON_BROWSER_RESIZE_DONE:
+    case breakPointTypes.ON_BROWSER_RESIZE_DONE:
       return _objectSpread({
         isLoading: false,
         dateLastModified: new Date().getTime()
@@ -236,7 +224,6 @@ function _metadata_Users(state, action) {
 
   switch (action.type) {
     case _metadata["a" /* metaDataTypes */].GET_SIDEMENU_DETAILS_SUCCESS:
-      console.log('--==>> GET_SIDEMENU_DETAILS_SUCCESS  ', state, action);
       return {
         isLoading: false,
         dateLastModified: new Date().getTime(),
@@ -253,7 +240,7 @@ function _metadata_Users(state, action) {
 
 
 /* harmony default export */ var reducers = (Object(external_redux_["combineReducers"])({
-  BreakPoints: reducers_breakPoints,
+  BreakPoints: _breakPoints,
   Users: Users,
   MetaData: _metadata_Users
 }));

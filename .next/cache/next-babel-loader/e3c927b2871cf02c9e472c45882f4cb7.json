@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from \"react\";\nexport default function AdminDashboard() {\n  return __jsx(\"div\", null, __jsx(\"div\", null, \"I am your admin dashboard\"));\n}","map":null,"metadata":{},"sourceType":"module"}

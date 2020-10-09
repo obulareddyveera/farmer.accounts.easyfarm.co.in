@@ -9,7 +9,6 @@ export default function Users(state, action) {
 
   switch (action.type) {
     case metaDataTypes.GET_SIDEMENU_DETAILS_SUCCESS:
-      console.log('--==>> GET_SIDEMENU_DETAILS_SUCCESS  ', state, action);
       return {
         isLoading: false,
         dateLastModified: new Date().getTime(),

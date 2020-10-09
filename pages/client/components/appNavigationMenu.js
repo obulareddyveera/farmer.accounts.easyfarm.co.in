@@ -1,23 +1,18 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {useTranslation} from "react-i18next";
-import {
-  getSideMenuMetaData,
-  onLiItemSelect,
-  onToggleSubmenu,
-} from "./../../../store/actions";
+import actions from "./../../../store/actions";
 
 /**
  * Source URL -- https://bootsnipp.com/snippets/prnvG
  */
 
 export default function AppNavigationMenu() {
+  const { metadataActions } = actions;
   const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
-  console.log("--==>> useTranslation ", t('sidemenu.helpCenter'));
   React.useEffect(() => {
-    console.log("--==>> GET_SIDEMENU_DETAILS_SUCCESS  <<==--");
-    dispatch(getSideMenuMetaData());
+    dispatch(metadataActions.getSideMenuMetaData());
   }, []);
 
   const { metaData } = useSelector((state) => {
@@ -26,19 +21,13 @@ export default function AppNavigationMenu() {
     };
   });
   const { sideMenuMetaInfo } = metaData;
-  console.log("--== metaData: sideMenuMetaInfo ", sideMenuMetaInfo);
 
   const onLiClick = (event, item) => {
-    event.preventDefault();
-    event.stopPropagation();
-    dispatch(onLiItemSelect(item));
+    dispatch(metadataActions.onLiItemSelect(item));
   };
 
   const toggleSubmenu = (event, item, ulId) => {
-    event.preventDefault();
-    event.stopPropagation();
-    console.log("--== toggleSubmenu ", event);
-    dispatch(onToggleSubmenu(item));
+    dispatch(metadataActions.onToggleSubmenu(item));
   };
 
   const getLinkTag = (item) => {
@@ -53,13 +42,16 @@ export default function AppNavigationMenu() {
         <React.Fragment>
           {item.type === "link" && (
             <React.Fragment>
-              <a href="#">
+              <a href={`#${item.url}`} className="d-flex justify-content-start">
+                <div>
                 {item.iconComponent &&
                   React.createElement(item.iconComponent, {
                     size: "20",
                     color: "#fff",
                   })}
-                <span className="ml-1">{t(item.translation)}</span>
+                </div>
+                <div className="ml-3">{t(item.translation)}</div>
+                <div>
                 {item.subMenu && (
                   <button
                     className="btn text-white submenu-indicator"
@@ -70,6 +62,7 @@ export default function AppNavigationMenu() {
                     {item.showSubmenu ? "-" : "+"}
                   </button>
                 )}
+                </div>
               </a>
             </React.Fragment>
           )}

@@ -1,5 +1,9 @@
 import enSidemenu from "./_sidemenu.json";
+import hnav from "./_c_hav.json";
 
 export default {
-    sidemenu: enSidemenu,
-}
+  common: {
+    hnav,
+  },
+  sidemenu: enSidemenu,
+};
